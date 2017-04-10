@@ -10,13 +10,14 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
-    [RoutePrefix("Album")]
+    //[RoutePrefix("Albums")]
+    [Authorize()]
     public class AlbumsController : Controller
     {
         private MvcMusicStoreContext db = new MvcMusicStoreContext();
 
         // GET: Albums
-        [Route("Album/All")]
+        //[Route("Album/All")]
         public ActionResult Index()
         {
             return View(db.Albums.ToList());
